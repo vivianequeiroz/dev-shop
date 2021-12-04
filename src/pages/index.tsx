@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 
-import { Link, Text } from '@chakra-ui/react';
+import { Link, Text, Icon } from '@chakra-ui/react';
 import Head from 'next/head';
+import { AiFillGithub } from 'react-icons/ai';
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +20,8 @@ const Home: NextPage = () => {
             Next.js!
           </Link>
         </Text>
+
+        <Icon as={AiFillGithub} width={60} height={60} fill="pink" />
       </main>
     </div>
   );
