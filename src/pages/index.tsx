@@ -1,11 +1,16 @@
 import type { NextPage } from 'next';
 
+import { FormEvent } from 'react';
+
 import { Text, Icon, VStack, Flex, Button, Image } from '@chakra-ui/react';
 import Head from 'next/head';
 import { AiFillGithub, AiOutlineShoppingCart } from 'react-icons/ai';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/dist/client/router';
 
-const Home: NextPage = () => {
+const Login: NextPage = () => {
+  const router = useRouter();
+
   const titleInitialAnimation = {
     x: 0,
     y: -200,
@@ -37,6 +42,12 @@ const Home: NextPage = () => {
     },
   };
 
+  const handleSignIn = (event: FormEvent<HTMLDivElement>) => {
+    // auth user with github
+    event.preventDefault();
+    router.push('/home');
+  };
+
   return (
     <Flex
       flex={1}
@@ -62,7 +73,13 @@ const Home: NextPage = () => {
         alignItems="center"
         padding={2}
       >
-        <VStack spacing={8} align="center" zIndex={2}>
+        <VStack
+          as="form"
+          onSubmit={handleSignIn}
+          spacing={8}
+          align="center"
+          zIndex={2}
+        >
           <motion.div
             initial={titleInitialAnimation}
             animate={titleFinalAnimation}
@@ -84,6 +101,7 @@ const Home: NextPage = () => {
             />
           </motion.div>
           <Button
+            type="submit"
             leftIcon={<Icon as={AiFillGithub} fill="black" />}
             variant="solid"
             size="lg"
@@ -106,4 +124,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Login;
