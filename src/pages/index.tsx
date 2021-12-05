@@ -1,16 +1,16 @@
 import type { NextPage } from 'next';
 
-import { FormEvent, useState } from 'react';
-
-import { rejects } from 'assert';
+import { FormEvent, useEffect, useState } from 'react';
 
 import { Text, Icon, VStack, Flex, Button, Image } from '@chakra-ui/react';
 import Head from 'next/head';
 import { AiFillGithub, AiOutlineShoppingCart } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/dist/client/router';
+import { signIn, useSession } from 'next-auth/react';
 
 const Login: NextPage = () => {
+  const { status: sessionStatus } = useSession();
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
@@ -53,6 +53,7 @@ const Login: NextPage = () => {
 
       await new Promise((resolve) => setTimeout(resolve, 5000)); // auth user with github
 
+      await signIn('github');
       router.push('/home');
     } catch (error) {
       console.error(error);
@@ -60,6 +61,12 @@ const Login: NextPage = () => {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (sessionStatus === 'authenticated') {
+      router.push('/home');
+    }
+  }, [sessionStatus, router]);
 
   return (
     <Flex
