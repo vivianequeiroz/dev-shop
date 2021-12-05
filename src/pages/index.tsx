@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
+
+import { rejects } from 'assert';
 
 import { Text, Icon, VStack, Flex, Button, Image } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -9,6 +11,8 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/dist/client/router';
 
 const Login: NextPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const router = useRouter();
 
   const titleInitialAnimation = {
@@ -42,16 +46,25 @@ const Login: NextPage = () => {
     },
   };
 
-  const handleSignIn = (event: FormEvent<HTMLDivElement>) => {
-    // auth user with github
-    event.preventDefault();
-    router.push('/home');
+  const handleSignIn = async (event: FormEvent<HTMLDivElement>) => {
+    try {
+      event.preventDefault();
+      setIsLoading(true);
+
+      await new Promise((resolve) => setTimeout(resolve, 5000)); // auth user with github
+
+      router.push('/home');
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <Flex
       flex={1}
-      backgroundColor="blue.500"
+      backgroundColor="blue.600"
       marginX="auto"
       justifyContent="center"
       position="relative"
@@ -105,6 +118,7 @@ const Login: NextPage = () => {
             leftIcon={<Icon as={AiFillGithub} fill="black" />}
             variant="solid"
             size="lg"
+            isLoading={isLoading}
           >
             Entrar com github
           </Button>
