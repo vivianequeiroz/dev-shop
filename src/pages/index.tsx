@@ -54,7 +54,6 @@ const Login: NextPage = () => {
       await new Promise((resolve) => setTimeout(resolve, 5000)); // auth user with github
 
       await signIn('github');
-      router.push('/home');
     } catch (error) {
       console.error(error);
     } finally {
