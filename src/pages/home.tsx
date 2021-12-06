@@ -4,6 +4,8 @@ import Head from 'next/head';
 import { Flex } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
 
+import { Header } from '../components/Header';
+
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
   console.info('user is logged in:', session);
@@ -32,7 +34,9 @@ const Home: NextPage = () => {
         justifyContent="center"
         alignItems="center"
         padding={2}
-      ></Flex>
+      >
+        <Header />
+      </Flex>
     </Flex>
   );
 };
