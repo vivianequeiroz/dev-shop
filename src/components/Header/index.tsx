@@ -1,4 +1,6 @@
 import { Flex, HStack, Icon, Link } from '@chakra-ui/react';
+import { GetServerSideProps } from 'next';
+import { getSession } from 'next-auth/react';
 import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
 
 import { Logo } from '../Logo';
