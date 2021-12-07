@@ -67,13 +67,13 @@ export function Footer() {
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/bni.svg"
+              src="/assets/payment-methods-icons/black-and-white/bni.svg"
               alt="Logo BNI"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/mandiri.svg"
+              src="/assets/payment-methods-icons/black-and-white/mandiri.svg"
               alt="Logo mandiri"
             />
           </VStack>
@@ -81,13 +81,13 @@ export function Footer() {
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/permata-bank.svg"
+              src="/assets/payment-methods-icons/black-and-white/permata-bank.svg"
               alt="Logo PermataBank"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/kredivo.svg"
+              src="/assets/payment-methods-icons/black-and-white/kredivo.svg"
               alt="Logo Kredivo"
             />
           </VStack>
@@ -95,13 +95,13 @@ export function Footer() {
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/mastercard.svg"
+              src="/assets/payment-methods-icons/black-and-white/mastercard.svg"
               alt="Logo Mastercard"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/uob.svg"
+              src="/assets/payment-methods-icons/black-and-white/uob.svg"
               alt="Logo UOB"
             />
           </VStack>
@@ -109,13 +109,13 @@ export function Footer() {
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/danamon.svg"
+              src="/assets/payment-methods-icons/black-and-white/danamon.svg"
               alt="Logo Danamon"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/go-pay.svg"
+              src="/assets/payment-methods-icons/black-and-white/go-pay.svg"
               alt="Logo Go Pay"
             />
           </VStack>
@@ -123,13 +123,13 @@ export function Footer() {
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/visa.svg"
+              src="/assets/payment-methods-icons/black-and-white/visa.svg"
               alt="Logo Visa"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/standard-chartered.svg"
+              src="/assets/payment-methods-icons/black-and-white/standard-chartered.svg"
               alt="Logo Standard Chartered"
             />
           </VStack>
