@@ -1,11 +1,24 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Avatar, Box, HStack, Icon, IconButton, Text } from '@chakra-ui/react';
+import {
+  Avatar,
+  Box,
+  HStack,
+  Icon,
+  IconButton,
+  Text,
+  useBreakpointValue,
+} from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
 import { AiOutlineUser } from 'react-icons/ai';
-import { RiLogoutBoxRLine } from 'react-icons/ri';
+import { RiLoginBoxLine } from 'react-icons/ri';
 import Link from 'next/link';
 
 export function User() {
+  const isDesktopScreen = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   const { status, data } = useSession();
   const isUserAuthenticated = status === 'authenticated';
   const isUserUnauthenticated = status === 'unauthenticated';
@@ -28,7 +41,7 @@ export function User() {
           <Link href="/">
             <IconButton
               colorScheme="blue"
-              icon={<RiLogoutBoxRLine />}
+              icon={<RiLoginBoxLine size={20} />}
               aria-label="Log out"
             />
           </Link>
@@ -36,12 +49,14 @@ export function User() {
       )}
       {isUserAuthenticated && (
         <>
-          <Box textAlign="right">
-            <Text color="white">{data?.user?.name}</Text>
-            <Text color="gray.300" fontSize="small">
-              {data?.user?.email}
-            </Text>
-          </Box>
+          {isDesktopScreen && (
+            <Box textAlign="right">
+              <Text color="white">{data?.user?.name}</Text>
+              <Text color="gray.300" fontSize="small">
+                {data?.user?.email}
+              </Text>
+            </Box>
+          )}
           <Avatar name="João Bispo" src={avatarSource} />
         </>
       )}

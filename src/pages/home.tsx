@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex
-        backgroundColor="blue.600"
+        backgroundColor="purple.300"
         height="100%"
         width="100%"
         flex={1}
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        padding={2}
+        padding={4}
       >
         <Header />
       </Flex>
