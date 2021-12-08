@@ -4,6 +4,8 @@ import Head from 'next/head';
 import { Flex } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
 
+import { Header } from '../components/Header';
+
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
   console.info('user is logged in:', session);
@@ -23,7 +25,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Flex
-        backgroundColor="blue.600"
+        backgroundColor="purple.300"
         height="100%"
         width="100%"
         flex={1}
@@ -31,8 +33,10 @@ const Home: NextPage = () => {
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        padding={2}
-      ></Flex>
+        padding={4}
+      >
+        <Header />
+      </Flex>
     </Flex>
   );
 };
