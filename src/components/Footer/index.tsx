@@ -162,22 +162,20 @@ export function Footer() {
           px={60}
         >
           <Stack align={'flex-start'}>
-            <ListHeader>
-              <Box>
-                <Image
-                  objectFit="cover"
-                  src="/assets/dev-shop.svg"
-                  alt="Logo DevShop"
-                />
-              </Box>
-            </ListHeader>
+            <Box>
+              <Image
+                objectFit="cover"
+                src="/assets/devshop-logo.svg"
+                alt="Logo DevShop"
+              />
+            </Box>
             <ListHeader>Endereço</ListHeader>
             <Text>Loja e Escritório</Text>
             <Text as="p">
               Jl. Setrasari Kulon III, No. 10-12, Sukarasa, Sukasari, Bandung,
               Jawa Barat, Indonesia 40152
             </Text>
-            <Text>Horário de funcionamento</Text>
+            <ListHeader>Horário de funcionamento</ListHeader>
             <Text>Segunda - Sábado</Text>
             <Text>10:00 - 18:00</Text>
           </Stack>
