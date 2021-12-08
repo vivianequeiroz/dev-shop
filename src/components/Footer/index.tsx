@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 
 import {
   Box,
-  Container,
   Link,
   SimpleGrid,
   Stack,
@@ -12,12 +11,14 @@ import {
   Button,
   VisuallyHidden,
   Image,
+  Divider,
+  Flex,
 } from '@chakra-ui/react';
 import { FaTwitter, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Text fontWeight={'600'} fontSize={'lg'} mb={2}>
+    <Text fontWeight={'600'} fontSize={'lg'} marginBottom={2}>
       {children}
     </Text>
   );
@@ -34,19 +35,19 @@ const SocialButton = ({
 }) => {
   return (
     <Button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-      rounded={'full'}
-      w={10}
-      h={10}
-      cursor={'pointer'}
       as={'a'}
+      backgroundColor={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      rounded={'full'}
+      width={20}
+      height={20}
+      cursor={'pointer'}
       href={href}
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
-      transition={'background 0.3s ease'}
+      transition={'background 0.3s ease in out'}
       _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+        backgroundColor: useColorModeValue('blackAlpha.300', 'whiteAlpha.200'),
       }}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
@@ -58,22 +59,30 @@ const SocialButton = ({
 export function Footer() {
   return (
     <Box position="fixed" bottom="0">
-      <Container as={Stack} maxWidth={'100%'} py={10} bg={'blue.400'}>
+      <Flex
+        as={Stack}
+        maxWidth={'100%'}
+        padding={'10'}
+        backgroundColor={'blue.400'}
+        justifyContent="center"
+        justifySelf="center"
+        alignItems="center"
+      >
         <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr 1fr' }}
-          spacing={8}
+          templateColumns={{ md: '1fr 1fr 1fr 1fr 1fr' }}
+          spacing={40}
         >
           <VStack align={'flex-start'}>
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/bni.svg"
+              src="/assets/payment-methods-logos/black-and-white/bni.svg"
               alt="Logo BNI"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/mandiri.svg"
+              src="/assets/payment-methods-logos/black-and-white/mandiri.svg"
               alt="Logo mandiri"
             />
           </VStack>
@@ -81,13 +90,13 @@ export function Footer() {
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/permata-bank.svg"
+              src="/assets/payment-methods-logos/black-and-white/permata-bank.svg"
               alt="Logo PermataBank"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/kredivo.svg"
+              src="/assets/payment-methods-logos/black-and-white/kredivo.svg"
               alt="Logo Kredivo"
             />
           </VStack>
@@ -95,13 +104,13 @@ export function Footer() {
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/mastercard.svg"
+              src="/assets/payment-methods-logos/black-and-white/mastercard.svg"
               alt="Logo Mastercard"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/uob.svg"
+              src="/assets/payment-methods-logos/black-and-white/uob.svg"
               alt="Logo UOB"
             />
           </VStack>
@@ -109,13 +118,13 @@ export function Footer() {
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/danamon.svg"
+              src="/assets/payment-methods-logos/black-and-white/danamon.svg"
               alt="Logo Danamon"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/go-pay.svg"
+              src="/assets/payment-methods-logos/black-and-white/go-pay.svg"
               alt="Logo Go Pay"
             />
           </VStack>
@@ -123,29 +132,34 @@ export function Footer() {
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/visa.svg"
+              src="/assets/payment-methods-logos/black-and-white/visa.svg"
               alt="Logo Visa"
             />
             <Image
               boxSize="100"
               objectFit="cover"
-              src="/assets/payment-methods-icons/black-and-white/standard-chartered.svg"
+              src="/assets/payment-methods-logos/black-and-white/standard-chartered.svg"
               alt="Logo Standard Chartered"
             />
           </VStack>
         </SimpleGrid>
-      </Container>
-      <Container
+      </Flex>
+      <Flex
         as={Stack}
         maxWidth={'100%'}
         heigth={'30%'}
-        py={10}
-        bg={'blue.600'}
+        padding={'30'}
+        backgroundColor={'blue.600'}
         color={'white'}
+        justifyContent="center"
+        justifySelf="center"
+        alignItems="center"
       >
         <SimpleGrid
-          templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr' }}
-          spacing={8}
+          templateColumns={{ md: '1fr 1fr 1fr 1fr' }}
+          spacing={20}
+          py={10}
+          px={60}
         >
           <Stack align={'flex-start'}>
             <ListHeader>
@@ -163,32 +177,34 @@ export function Footer() {
               Jl. Setrasari Kulon III, No. 10-12, Sukarasa, Sukasari, Bandung,
               Jawa Barat, Indonesia 40152
             </Text>
-            <ListHeader>Horário de funcionamento</ListHeader>
+            <Text>Horário de funcionamento</Text>
             <Text>Segunda - Sábado</Text>
             <Text>10:00 - 18:00</Text>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Entre em contato conosco</ListHeader>
+            <Divider width={'20'} />
             <Text>Telefone: 022-20277564</Text>
             <Text>Service Center: 0811-233-8899</Text>
             <Text>Customer Center: 0811-235-9988</Text>
             <Stack direction={'row'} spacing={6} paddingTop={8}>
               <SocialButton label={'Twitter'} href={'#'}>
-                <FaTwitter />
+                <FaTwitter size={32} />
               </SocialButton>
               <SocialButton label={'YouTube'} href={'#'}>
-                <FaYoutube />
+                <FaYoutube size={32} />
               </SocialButton>
               <SocialButton label={'Instagram'} href={'#'}>
-                <FaInstagram />
+                <FaInstagram size={32} />
               </SocialButton>
               <SocialButton label={'Facebook'} href={'#'}>
-                <FaFacebook />
+                <FaFacebook size={32} />
               </SocialButton>
             </Stack>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Links Úteis</ListHeader>
+            <Divider width={'20'} />
             <Link href={'#'}>Garantia</Link>
             <Link href={'#'}>Pedido & Envio</Link>
             <Link href={'#'}>Rastreamento</Link>
@@ -199,6 +215,7 @@ export function Footer() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Campanhas</ListHeader>
+            <Divider width={'20'} />
             <Link href={'#'}>Mengenal Arti Cukup</Link>
             <Link href={'#'}>Tell Your Difference</Link>
             <Link href={'#'}>Waykambas</Link>
@@ -208,7 +225,7 @@ export function Footer() {
             <Link href={'#'}>Rakai</Link>
           </Stack>
         </SimpleGrid>
-      </Container>
+      </Flex>
     </Box>
   );
 }
