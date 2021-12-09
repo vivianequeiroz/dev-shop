@@ -58,7 +58,7 @@ const SocialButton = ({
 
 export function Footer() {
   return (
-    <Box position="fixed" bottom="0">
+    <Box bottom="0">
       <Flex
         as={Stack}
         maxWidth={'100%'}
