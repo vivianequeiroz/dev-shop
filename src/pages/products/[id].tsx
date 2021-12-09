@@ -1,19 +1,52 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 
-import { useRouter } from 'next/dist/client/router';
+import { Flex } from '@chakra-ui/react';
 
 import { Footer } from '../../components/Footer';
+import { Header } from '../../components/Header';
+import { getProductById, Product } from '../../services/productsServices';
 
-const Product: NextPage = () => {
-  const router = useRouter();
-  const productId = router.query.id as string;
+type ProductPageProps = {
+  product: Product;
+};
 
+const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
   return (
-    <div>
-      <h1>Product: {productId}</h1>
+    <Flex direction="column">
+      <Header />
+      <h1>{product.title}</h1>
       <Footer />
-    </div>
+    </Flex>
   );
 };
 
-export default Product;
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   return {
+//     paths: [{ params: { id: '100' } }],
+//     fallback: true,
+//   };
+// };
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const id = String(context.params?.id);
+  console.info(id);
+  const product = await getProductById(id);
+  console.info(product);
+
+  if (!product) {
+    return {
+      redirect: {
+        destination: '/home',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      product,
+    },
+  };
+};
+
+export default ProductPage;
