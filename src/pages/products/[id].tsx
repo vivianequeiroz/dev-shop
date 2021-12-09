@@ -46,6 +46,69 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
             </Box>
           </Flex>
         </Box>
+        <Flex mt={[3, 8]} px={10} align="center" justify="center">
+          <Tabs>
+            <TabList>
+              <Tab>Detalhes</Tab>
+              <Tab>Garantia</Tab>
+              <Tab>Pedido personalizado</Tab>
+              <Tab>Ajustes</Tab>
+              <Tab>Como cuidar</Tab>
+              <Tab>Notas</Tab>
+            </TabList>
+
+            <TabPanels>
+              <TabPanel>
+                <Text as="h2" color="gray.600" fontWeight="bold" fontSize="2xl">
+                  Descrição
+                </Text>
+                <Text as="p" color="gray.600" fontSize="xl">
+                  {generateLorem('large')}
+                </Text>
+              </TabPanel>
+              <TabPanel>
+                <Text as="h2" color="gray.600" fontWeight="bold" fontSize="2xl">
+                  Material
+                </Text>
+                <Text as="p" color="gray.600" fontSize="xl">
+                  {generateLorem('medium')}
+                </Text>
+              </TabPanel>
+              <TabPanel>
+                <Text as="h2" color="gray.600" fontWeight="bold" fontSize="2xl">
+                  Caso
+                </Text>
+                <Text as="p" color="gray.600" fontSize="xl">
+                  {generateLorem('large')}
+                </Text>
+              </TabPanel>
+              <TabPanel>
+                <Text as="h2" color="gray.600" fontWeight="bold" fontSize="2xl">
+                  Usabilidade
+                </Text>
+                <Text as="p" color="gray.600" fontSize="xl">
+                  {generateLorem('medium')}
+                </Text>
+              </TabPanel>
+              <TabPanel>
+                <Text as="h2" color="gray.600" fontWeight="bold" fontSize="2xl">
+                  Em mãos
+                </Text>
+                <Text as="p" color="gray.600" fontSize="xl">
+                  {generateLorem('large')}
+                </Text>
+              </TabPanel>
+              <TabPanel>
+                <Text as="h2" color="gray.600" fontWeight="bold" fontSize="2xl">
+                  Notas importantes
+                </Text>
+                <Text as="p" color="gray.600" fontSize="xl">
+                  {generateLorem('small')}
+                </Text>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+        </Flex>
       </Flex>
     </Flex>
   );
