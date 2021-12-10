@@ -281,7 +281,7 @@ export function ProductsExhibition() {
                 <Image
                   transform="scale(1.0)"
                   src={
-                    'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
+                    'https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80'
                   }
                   alt="some text"
                   objectFit="contain"
@@ -293,7 +293,50 @@ export function ProductsExhibition() {
                 />
               </Link>
             </Box>
-            <ProductsTags tags={['Engineering', 'Product']} marginTop="3" />
+            <ProductsTags
+              tags={['teclado mecanico', 'keycron']}
+              marginTop="3"
+            />
+            <Heading fontSize={'xl'} marginTop="2">
+              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                Teclado mecânico Keycron
+              </Link>
+            </Heading>
+            <Text as="p" fontSize="md" marginTop="2">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industrys standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </Text>
+            <Text fontSize={'xl'} fontWeight={800}>
+              R$799
+            </Text>
+          </Box>
+        </WrapItem>
+
+        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
+          <Box w="100%">
+            <Box borderRadius="lg" overflow="hidden">
+              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+                <Image
+                  transform="scale(1.0)"
+                  src={
+                    'https://images.unsplash.com/photo-1618586810102-aaa7049200c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80'
+                  }
+                  alt="some text"
+                  objectFit="contain"
+                  width="100%"
+                  transition="0.3s ease-in-out"
+                  _hover={{
+                    transform: 'scale(1.05)',
+                  }}
+                />
+              </Link>
+            </Box>
+            <ProductsTags
+              tags={['teclado mecanico', 'ergonomico']}
+              marginTop="3"
+            />
             <Heading fontSize={'xl'} marginTop="2">
               <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
                 Product title
@@ -318,7 +361,7 @@ export function ProductsExhibition() {
                 <Image
                   transform="scale(1.0)"
                   src={
-                    'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
+                    'https://images.unsplash.com/photo-1584727151652-d09b17ebf23f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1511&q=80'
                   }
                   alt="some text"
                   objectFit="contain"
@@ -330,44 +373,10 @@ export function ProductsExhibition() {
                 />
               </Link>
             </Box>
-            <ProductsTags tags={['Engineering', 'Product']} marginTop="3" />
-            <Heading fontSize={'xl'} marginTop="2">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                Product title
-              </Link>
-            </Heading>
-            <Text as="p" fontSize="md" marginTop="2">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industrys standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </Text>
-            <Text fontSize={'xl'} fontWeight={800}>
-              R$799
-            </Text>
-          </Box>
-        </WrapItem>
-
-        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-          <Box w="100%">
-            <Box borderRadius="lg" overflow="hidden">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                <Image
-                  transform="scale(1.0)"
-                  src={
-                    'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
-                  }
-                  alt="some text"
-                  objectFit="contain"
-                  width="100%"
-                  transition="0.3s ease-in-out"
-                  _hover={{
-                    transform: 'scale(1.05)',
-                  }}
-                />
-              </Link>
-            </Box>
-            <ProductsTags tags={['Engineering', 'Product']} marginTop="3" />
+            <ProductsTags
+              tags={['teclado mecanico', 'compacto']}
+              marginTop="3"
+            />
             <Heading fontSize={'xl'} marginTop="2">
               <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
                 Product title
