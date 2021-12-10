@@ -1,34 +1,79 @@
 import type { GetServerSideProps, NextPage } from 'next';
 
 import { Carousel } from 'react-responsive-carousel';
-import { Box, Flex, Image } from '@chakra-ui/react';
-import NextImage from 'next/image';
+import {
+  Badge,
+  Box,
+  Flex,
+  Image,
+  Stack,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+} from '@chakra-ui/react';
 
-import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
 import { getProductById, Product } from '../../services/productsServices';
+import { generateLorem } from '../../utils/generateLorem';
+
 type ProductPageProps = {
   product: Product;
 };
 
 const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
+  const renderCustomThumbs = () => {
+    const images = product.images;
+    const thumbList = images.map((image, index) => (
+      <picture key={index}>
+        <source data-srcSet={image} type="image/jpg" />
+        <img key={image} src={image} alt={image} height="70" />
+      </picture>
+    ));
+
+    return thumbList;
+  };
+
   return (
-    <Flex direction="column">
+    <Flex
+      direction="column"
+      height="100%"
+      width="100%"
+      flex={1}
+      maxWidth="2560px"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      padding={4}
+    >
       <Header />
-      <Flex direction="column" width="100%" px={4}>
-        <Box height="100vh">
-          <Flex align="center" justify="space-between">
-            <Box bgColor="purple">
+      <Flex width="100%" px={4} direction="column">
+        <Box>
+          <Flex
+            align="flex-start"
+            justify="space-between"
+            mt={6}
+            wrap={['wrap-reverse', 'wrap']}
+          >
+            <Box
+              border="1px"
+              borderRadius="4px"
+              borderColor="gray.400"
+              width={['100%', '49%']}
+            >
               <Carousel
-                axis="vertical"
-                infiniteLoop
+                showThumbs
                 autoPlay
+                infiniteLoop
                 emulateTouch
-                useKeyboardArrows
-                dynamicHeight
-                // renderArrowPrev={() => <div>Prev</div>}
-                // renderArrowNext={() => <div>Next</div>}
-                // renderIndicator={() => <div>Indicator</div>}
+                showArrows={false}
+                showStatus={false}
+                showIndicators={false}
+                transitionTime={500}
+                swipeable={false}
+                renderThumbs={renderCustomThumbs}
               >
                 {product.images.map((image, index) => (
                   <Image
@@ -37,6 +82,9 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
                     src={image}
                     alt={`${product.title} ${index}`}
                     key={image}
+                    onChange={(args) => {
+                      console.log(args);
+                    }}
                   />
                 ))}
               </Carousel>
