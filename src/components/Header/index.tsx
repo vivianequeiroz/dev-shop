@@ -47,6 +47,7 @@ export function Header() {
       width="100%"
       align="center"
       justify="space-between"
+      paddingX="1.5rem"
     >
       <Logo />
       <NavBar />
