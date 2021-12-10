@@ -18,6 +18,7 @@ import {
 import { Header } from '../../components/Header';
 import { getProductById, Product } from '../../services/productsServices';
 import { generateLorem } from '../../utils/generateLorem';
+import { Shell } from '../../templates/Shell';
 
 type ProductPageProps = {
   product: Product;
@@ -37,18 +38,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
   };
 
   return (
-    <Flex
-      direction="column"
-      height="100%"
-      width="100%"
-      flex={1}
-      maxWidth="2560px"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      padding={4}
-    >
-      <Header />
+    <Shell>
       <Flex width="100%" px={4} direction="column">
         <Box>
           <Flex
@@ -174,7 +164,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
           </Tabs>
         </Flex>
       </Flex>
-    </Flex>
+    </Shell>
   );
 };
 
