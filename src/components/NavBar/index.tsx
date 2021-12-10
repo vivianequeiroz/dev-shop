@@ -11,16 +11,16 @@ export const NavBar: React.FC = () => {
         gap={[2, 4, 8, 10]}
       >
         <Link fontSize="1.3rem" fontWeight="bold" color="blue.700">
-          Screens
+          Monitores
         </Link>
         <Link fontSize="1.3rem" fontWeight="bold" color="blue.700">
-          Keyboards
+          Teclados
         </Link>
         <Link fontSize="1.3rem" fontWeight="bold" color="blue.700">
           Mouses
         </Link>
         <Link fontSize="1.3rem" fontWeight="bold" color="blue.700">
-          Chairs
+          Cadeiras
         </Link>
       </SimpleGrid>
     </Flex>
