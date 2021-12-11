@@ -26,12 +26,11 @@ import { Logo } from '../Logo';
 import { User } from '../User';
 import { NavBar } from '../NavBar';
 import { CartItem } from '../CartItem';
-import products from '../../services/productsServices/products.json';
 import { useCart } from '../../hooks/useCart';
 
 export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { cart } = useCart();
+  const { cart, removeProduct } = useCart();
   const isCartEmpty = cart.length === 0;
 
   const finalRef = useRef();
@@ -124,6 +123,7 @@ export function Header() {
                     name={product.title}
                     quantity={Number(product.amount)}
                     price={product.price}
+                    onClickDelete={() => removeProduct(product.id)}
                   />
                 ))}
                 {isCartEmpty && (

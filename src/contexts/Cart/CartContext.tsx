@@ -127,9 +127,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       toast({
-        title: 'info',
+        title: 'Info',
         description: 'Produto removido do carrinho.',
-        status: 'error',
+        status: 'info',
         duration: 9000,
         isClosable: true,
         position: 'top-right',
