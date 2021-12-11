@@ -83,7 +83,11 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
                 ))}
               </Carousel>
             </Box>
-            <Box width={['100%', '49%']} align={['center', 'flex-start']}>
+            <Box
+              width={['100%', '49%']}
+              align={['center', 'flex-start']}
+              spacing={[2, 4]}
+            >
               <Stack spacing={[2, 4]} direction="row">
                 {product.badges.map((badge) => (
                   <Badge key={badge} variant="subtle" colorScheme="purple">
@@ -91,8 +95,17 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
                   </Badge>
                 ))}
               </Stack>
-              <Text as="h1" color="gray.500" fontSize="4xl" noOfLines={8}>
+              <Text
+                mt={2}
+                as="h1"
+                color="gray.500"
+                fontSize="4xl"
+                noOfLines={8}
+              >
                 {product.title}
+              </Text>
+              <Text mt={3} as="p" color="gray.600" fontSize="xl" noOfLines={8}>
+                {product.description}
               </Text>
               <Text mt={6} as="h2" color="gray.500" fontSize="5xl">
                 Por:{' '}
@@ -106,7 +119,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
               <Box>
                 <Button
                   m="1rem"
-                  marginTop={[4, 12, 40]}
+                  marginTop={[4, 12, 20]}
                   colorScheme="blue"
                   width="100%"
                   height="3rem"
