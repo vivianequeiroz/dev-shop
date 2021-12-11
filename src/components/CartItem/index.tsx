@@ -96,7 +96,7 @@ export const CartItem = (props: CartItemProps) => {
         justify="space-between"
         display={{ base: 'flex', md: 'none' }}
       >
-        <Link fontSize="sm" textDecor="underline">
+        <Link fontSize="sm" textDecor="underline" onClick={onClickDelete}>
           Delete
         </Link>
         <QuantitySelect value={quantity} onChange={onChangeProductAmount} />
