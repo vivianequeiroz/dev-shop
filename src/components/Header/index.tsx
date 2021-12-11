@@ -18,6 +18,7 @@ import {
   useDisclosure,
   Heading,
   Text,
+  useToast,
 } from '@chakra-ui/react';
 import { signOut, useSession } from 'next-auth/react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
@@ -32,6 +33,8 @@ import { useCart } from '../../hooks/useCart';
 export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { cart, removeProduct, totalPrice, totalItems } = useCart();
+  const toast = useToast();
+
   const isCartEmpty = cart.length === 0;
 
   const finalRef = useRef();
@@ -50,6 +53,14 @@ export function Header() {
   const handleUserLogOut = async () => {
     setLoading(true);
     try {
+      toast({
+        title: 'Info',
+        description: `retorne em breve ao DevShop!`,
+        status: 'info',
+        duration: 9000,
+        isClosable: true,
+        position: 'top-right',
+      });
       await new Promise((resolve) => setTimeout(resolve, 1500));
       await signOut();
     } catch (error) {

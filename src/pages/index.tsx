@@ -2,11 +2,19 @@ import type { GetServerSideProps, NextPage } from 'next';
 
 import { FormEvent, useState } from 'react';
 
-import { Text, Icon, VStack, Flex, Button, Image } from '@chakra-ui/react';
+import {
+  Text,
+  Icon,
+  VStack,
+  Flex,
+  Button,
+  Image,
+  useToast,
+} from '@chakra-ui/react';
 import Head from 'next/head';
 import { AiFillGithub, AiOutlineShoppingCart } from 'react-icons/ai';
 import { motion } from 'framer-motion';
-import { getSession, signIn } from 'next-auth/react';
+import { getSession, signIn, useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
 
 type LoginProps = {
@@ -15,6 +23,8 @@ type LoginProps = {
 
 const Login: NextPage<LoginProps> = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const { data } = useSession();
+  const toast = useToast();
 
   const titleInitialAnimation = {
     x: 0,
@@ -52,11 +62,28 @@ const Login: NextPage<LoginProps> = () => {
       event.preventDefault();
       setIsLoading(true);
 
-      await new Promise((resolve) => setTimeout(resolve, 5000)); // auth user with github
-
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // auth user with github
       await signIn('github');
+      toast({
+        title: 'Sucesso',
+        description: `Bem-vindo ao DevShop!`,
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+        position: 'top-right',
+      });
+      await new Promise((resolve) => setTimeout(resolve, 5000)); // delay
     } catch (error) {
       console.error(error);
+      toast({
+        title: 'Erro',
+        description:
+          'Não foi possível realizar login, entre em contato com o suporte.',
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+        position: 'top-right',
+      });
     } finally {
       setIsLoading(false);
     }
