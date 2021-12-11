@@ -152,7 +152,13 @@ export function ProductsExhibition() {
 
       <Divider mt="5rem" mb="5rem" />
 
-      <Heading d="flex" as="h1" justifyContent="flex-start" mt="2rem" id="monitors">
+      <Heading
+        d="flex"
+        as="h1"
+        justifyContent="flex-start"
+        mt="2rem"
+        id="monitors"
+      >
         Monitores
       </Heading>
       <Wrap spacing="30px" marginTop="5">
@@ -270,7 +276,13 @@ export function ProductsExhibition() {
 
       <Divider mt="5rem" mb="5rem" />
 
-      <Heading d="flex" as="h1" justifyContent="flex-start" mt="2rem" id="keyboards">
+      <Heading
+        d="flex"
+        as="h1"
+        justifyContent="flex-start"
+        mt="2rem"
+        id="keyboards"
+      >
         Teclados
       </Heading>
       <Wrap spacing="30px" marginTop="5">
@@ -397,7 +409,13 @@ export function ProductsExhibition() {
 
       <Divider mt="5rem" mb="5rem" />
 
-      <Heading d="flex" as="h1" justifyContent="flex-start" mt="2rem" id="mouses">
+      <Heading
+        d="flex"
+        as="h1"
+        justifyContent="flex-start"
+        mt="2rem"
+        id="mouses"
+      >
         Mouses
       </Heading>
       <Wrap spacing="30px" marginTop="5">
@@ -515,7 +533,13 @@ export function ProductsExhibition() {
 
       <Divider mt="5rem" mb="5rem" />
 
-      <Heading d="flex" as="h1" justifyContent="flex-start" mt="2rem" id="chairs">
+      <Heading
+        d="flex"
+        as="h1"
+        justifyContent="flex-start"
+        mt="2rem"
+        id="chairs"
+      >
         Cadeiras
       </Heading>
       <Wrap spacing="30px" marginTop="5">
