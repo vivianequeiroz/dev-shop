@@ -26,10 +26,12 @@ import { Logo } from '../Logo';
 import { User } from '../User';
 import { NavBar } from '../NavBar';
 import { CartItem } from '../CartItem';
-import { getProducts } from '../../services/productsServices';
 import products from '../../services/productsServices/products.json';
+import { useCart } from '../../hooks/useCart';
+
 export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { cart } = useCart();
   const finalRef = useRef();
 
   const [isLoading, setLoading] = useState(false);
@@ -111,14 +113,15 @@ export function Header() {
           <ModalBody>
             <Stack spacing={{ base: '8', md: '10' }} flex="2">
               <Stack spacing="6">
-                {products.map((product) => (
+                {cart.map((product) => (
                   <CartItem
                     key={product.id}
+                    id={product.id}
                     imageUrl={product.images[0]}
                     currency="BRL"
                     name={product.title}
-                    {...product}
-                    quantity={6}
+                    quantity={Number(product.amount)}
+                    price={product.price}
                   />
                 ))}
               </Stack>
