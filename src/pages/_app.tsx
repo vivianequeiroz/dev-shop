@@ -6,6 +6,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { SessionProvider } from 'next-auth/react';
 
 import { CartProvider } from '../contexts/Cart/CartContext';
+import '../styles/global.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
