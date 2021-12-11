@@ -20,6 +20,8 @@ export interface CartContextData {
   addProduct: (productId: string) => Promise<void>;
   removeProduct: (productId: string) => void;
   updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void;
+  totalPrice: number;
+  totalItems: number;
 }
 
 export const CartContext = createContext<CartContextData>(
@@ -51,6 +53,18 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
     return storagedCart;
   });
+
+  const totalPrice = cart.reduce(
+    (acc, product) =>
+      acc + Number(product.amount)
+        ? Number(product.amount) * product.price
+        : product.price,
+    0,
+  );
+  const totalItems = cart.reduce(
+    (acc, product) => acc + Number(product.amount),
+    0,
+  );
 
   const addProduct = async (productId: string) => {
     try {
@@ -86,7 +100,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
             : 1,
         });
       }
-      console.log(cart);
       toast({
         title: 'Sucesso',
         description: 'Produto adicionado ao carrinho',
@@ -96,7 +109,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         position: 'top-right',
       });
     } catch (error: any) {
-      console.log(`deu ruim`);
       toast({
         title: 'Erro',
         description: 'Não foi possível adicionar o produto',
@@ -110,7 +122,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   const removeProduct = (productId: string) => {
     try {
-      console.log('trying to remove');
       const hasProductInCart = cart.find((product) => product.id === productId);
 
       if (hasProductInCart) {
@@ -127,16 +138,14 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       toast({
-        title: 'info',
+        title: 'Info',
         description: 'Produto removido do carrinho.',
-        status: 'error',
+        status: 'info',
         duration: 9000,
         isClosable: true,
         position: 'top-right',
       });
     } catch (error) {
-      console.log(`deu ruim`);
-      console.log(error);
       toast({
         title: 'Erro',
         description: 'Erro ao remover produto do carrinho.',
@@ -152,7 +161,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     productId,
     amount,
   }: UpdateProductAmount) => {
-    console.log('trying to update', productId, amount);
     try {
       if (amount <= 0) {
         return;
@@ -176,8 +184,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         return newCart;
       });
     } catch (error: any) {
-      console.log(`deu ruim update`);
-      console.log(error.message);
       toast({
         title: 'Erro',
         description: 'Erro ao remover produto do carrinho.',
@@ -191,7 +197,14 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, removeProduct, updateProductAmount }}
+      value={{
+        cart,
+        addProduct,
+        removeProduct,
+        updateProductAmount,
+        totalPrice,
+        totalItems,
+      }}
     >
       {children}
     </CartContext.Provider>

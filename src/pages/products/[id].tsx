@@ -99,14 +99,18 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
               </Text>
               <Text mt={6} as="h2" color="gray.500" fontSize="5xl">
                 Por:{' '}
-                <Text as="b" color="gray.600" fontWeight="bold" fontSize="6xl">
-                  {product.price}
+                <Text as="b" color="green.600" fontWeight="bold" fontSize="6xl">
+                  {new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  }).format(product.price)}
                 </Text>
               </Text>
               <Box>
                 <Button
                   m="1rem"
-                  colorScheme="green"
+                  marginTop={[4, 12, 40]}
+                  colorScheme="blue"
                   width="100%"
                   height="3rem"
                   onClick={addProductToCart}
