@@ -65,6 +65,7 @@ export function Header() {
       align="center"
       justify="space-between"
       paddingX="1.5rem"
+      backgroundColor={'blue.200'}
     >
       <Logo />
       <NavBar />
