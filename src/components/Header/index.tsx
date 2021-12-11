@@ -115,7 +115,7 @@ export function Header() {
 
       <Modal finalFocusRef={finalRef.current} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent minWidth={['full', '500px', '600px']}>
+        <ModalContent minWidth={['full', '500px', '600px', '60%', '80%']}>
           <ModalHeader>
             {' '}
             <Heading fontSize="2xl" fontWeight="extrabold" color="gray.600">
