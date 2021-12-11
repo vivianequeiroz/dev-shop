@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { type } from 'os';
-
+import NextLink from 'next/link';
 import {
   Box,
   Heading,
@@ -40,13 +39,18 @@ export const ProductsTags: React.FC<IProductsTags> = (props) => {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({
-  product: { title, price, images, badges, description },
+  product: { id, title, price, images, badges, description },
 }) => {
   return (
     <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
       <Box w="100%">
         <Box borderRadius="lg" overflow="hidden">
-          <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+          <Link
+            as={NextLink}
+            href={`/products/${id}`}
+            textDecoration="none"
+            _hover={{ textDecoration: 'none' }}
+          >
             <Image
               transform="scale(1.0)"
               src={images[0]}
@@ -62,7 +66,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </Box>
         <ProductsTags tags={badges} marginTop="3" />
         <Heading fontSize={'xl'} marginTop="2">
-          <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+          <Link
+            as={NextLink}
+            href={`/products/${id}`}
+            textDecoration="none"
+            _hover={{ textDecoration: 'none' }}
+          >
             {title}
           </Link>
         </Heading>

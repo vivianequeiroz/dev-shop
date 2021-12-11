@@ -1,5 +1,6 @@
 import React from 'react';
 
+import NextLink from 'next/link';
 import {
   Box,
   Heading,
@@ -7,11 +8,7 @@ import {
   Image,
   Text,
   Divider,
-  HStack,
-  Tag,
   Wrap,
-  WrapItem,
-  SpaceProps,
   useColorModeValue,
   Container,
   VStack,
@@ -72,7 +69,12 @@ export function ProductsExhibition() {
             marginLeft={{ base: '0', sm: '5%' }}
             marginTop="5%"
           >
-            <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+            <Link
+              as={NextLink}
+              href={`/products/${chairs[0].id}`}
+              textDecoration="none"
+              _hover={{ textDecoration: 'none' }}
+            >
               <Image
                 borderRadius="lg"
                 src={chairs[0].images[0]}
@@ -102,7 +104,12 @@ export function ProductsExhibition() {
         >
           <ProductsTags tags={['cadeira', 'home office']} />
           <Heading marginTop="1">
-            <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+            <Link
+              as={NextLink}
+              href={`/products/${chairs[0].id}`}
+              textDecoration="none"
+              _hover={{ textDecoration: 'none' }}
+            >
               Cadeira para escritório e home office
             </Link>
           </Heading>
