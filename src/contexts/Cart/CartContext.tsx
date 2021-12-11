@@ -11,15 +11,17 @@ interface CartProviderProps {
 }
 
 interface UpdateProductAmount {
-  productId: number;
+  productId: string;
   amount: number;
 }
 
 export interface CartContextData {
   cart: Product[];
-  addProduct: (productId: number) => Promise<void>;
-  removeProduct: (productId: number) => void;
+  addProduct: (productId: string) => Promise<void>;
+  removeProduct: (productId: string) => void;
   updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void;
+  totalPrice: number;
+  totalItems: number;
 }
 
 export const CartContext = createContext<CartContextData>(
@@ -45,13 +47,26 @@ const persistCart = (cart: Product[]) => {
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const toast = useToast();
+
   const [cart, setCart] = useState<Product[]>(() => {
     const storagedCart = recoverCart();
 
     return storagedCart;
   });
 
-  const addProduct = async (productId: number) => {
+  const totalPrice = cart.reduce(
+    (acc, product) =>
+      acc + Number(product.amount)
+        ? Number(product.amount) * product.price
+        : product.price,
+    0,
+  );
+  const totalItems = cart.reduce(
+    (acc, product) => acc + Number(product.amount),
+    0,
+  );
+
+  const addProduct = async (productId: string) => {
     try {
       const product = products.find((product) => product.id === productId);
 
@@ -80,17 +95,18 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       } else {
         updateProductAmount({
           productId,
-          amount: cart[isProductAlreadyInCartIndex].inventory + 1,
+          amount: cart[isProductAlreadyInCartIndex].amount
+            ? Number(cart[isProductAlreadyInCartIndex].amount) + 1
+            : 1,
         });
       }
-
       toast({
         title: 'Sucesso',
         description: 'Produto adicionado ao carrinho',
         status: 'success',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
     } catch (error: any) {
       toast({
@@ -99,12 +115,12 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         status: 'error',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
     }
   };
 
-  const removeProduct = (productId: number) => {
+  const removeProduct = (productId: string) => {
     try {
       const hasProductInCart = cart.find((product) => product.id === productId);
 
@@ -122,21 +138,21 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       }
 
       toast({
-        title: 'info',
+        title: 'Info',
         description: 'Produto removido do carrinho.',
-        status: 'error',
+        status: 'info',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
-    } catch {
+    } catch (error) {
       toast({
         title: 'Erro',
         description: 'Erro ao remover produto do carrinho.',
         status: 'error',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
     }
   };
@@ -150,10 +166,10 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         return;
       }
 
-      const product = products.find((product) => product.id === productId);
+      const product = cart.find((product) => product.id === productId);
 
-      if (product!.inventory < amount) {
-        throw new Error('Product out of stock');
+      if (!product) {
+        return;
       }
 
       setCart((previousCart) => {
@@ -161,7 +177,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
           (product) => product.id === productId,
         );
 
-        previousCart[productIndex].inventory = amount;
+        previousCart[productIndex].amount = amount;
         const newCart = [...previousCart];
 
         persistCart(newCart);
@@ -174,14 +190,21 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         status: 'error',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
     }
   };
 
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, removeProduct, updateProductAmount }}
+      value={{
+        cart,
+        addProduct,
+        removeProduct,
+        updateProductAmount,
+        totalPrice,
+        totalItems,
+      }}
     >
       {children}
     </CartContext.Provider>

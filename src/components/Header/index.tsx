@@ -17,6 +17,8 @@ import {
   Button,
   useDisclosure,
   Heading,
+  Text,
+  useToast,
 } from '@chakra-ui/react';
 import { signOut, useSession } from 'next-auth/react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
@@ -26,10 +28,15 @@ import { Logo } from '../Logo';
 import { User } from '../User';
 import { NavBar } from '../NavBar';
 import { CartItem } from '../CartItem';
-import { getProducts } from '../../services/productsServices';
-import products from '../../services/productsServices/products.json';
+import { useCart } from '../../hooks/useCart';
+
 export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { cart, removeProduct, totalPrice, totalItems } = useCart();
+  const toast = useToast();
+
+  const isCartEmpty = cart.length === 0;
+
   const finalRef = useRef();
 
   const [isLoading, setLoading] = useState(false);
@@ -46,6 +53,14 @@ export function Header() {
   const handleUserLogOut = async () => {
     setLoading(true);
     try {
+      toast({
+        title: 'Info',
+        description: `retorne em breve ao DevShop!`,
+        status: 'info',
+        duration: 9000,
+        isClosable: true,
+        position: 'top-right',
+      });
       await new Promise((resolve) => setTimeout(resolve, 1500));
       await signOut();
     } catch (error) {
@@ -63,14 +78,14 @@ export function Header() {
       align="center"
       justify="space-between"
       paddingX="1.5rem"
-      backgroundColor={'blue.200'}
+      backgroundColor={'blue.600'}
     >
       <Logo />
       <NavBar />
       <Stack spacing={[2, 4]} direction="row" align="center">
         <User />
         <Center height="4rem" width="1rem">
-          <Divider orientation={dividerOrientation} color="black" />
+          <Divider orientation={dividerOrientation} height="60%" />
         </Center>
 
         <IconButton
@@ -83,7 +98,7 @@ export function Header() {
         {isUserAuthenticated && (
           <>
             <Center height="4rem" width="1rem">
-              <Divider orientation={dividerOrientation} color="black" />
+              <Divider orientation={dividerOrientation} height="60%" />
             </Center>
             <IconButton
               as="button"
@@ -100,27 +115,69 @@ export function Header() {
 
       <Modal finalFocusRef={finalRef.current} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent minWidth={['full', '500px', '600px']}>
+        <ModalContent minWidth={['full', '500px', '600px', '60%', '80%']}>
           <ModalHeader>
             {' '}
             <Heading fontSize="2xl" fontWeight="extrabold" color="gray.600">
-              Carrinho de compras (3 items)
+              Carrinho de compras ({totalItems} itens)
             </Heading>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Stack spacing={{ base: '8', md: '10' }} flex="2">
               <Stack spacing="6">
-                {products.map((product) => (
-                  <CartItem
-                    key={product.id}
-                    imageUrl={product.images[0]}
-                    currency="BRL"
-                    name={product.title}
-                    {...product}
-                    quantity={6}
-                  />
+                {cart.map((product) => (
+                  <>
+                    <Divider
+                      orientation="horizontal"
+                      borderColor="gray.300"
+                      width="100%"
+                      height="10px"
+                    />
+                    <CartItem
+                      key={product.id}
+                      id={product.id}
+                      imageUrl={product.images[0]}
+                      currency="BRL"
+                      name={product.title}
+                      quantity={Number(product.amount)}
+                      price={product.price}
+                      onClickDelete={() => removeProduct(product.id)}
+                    />
+                  </>
                 ))}
+                {isCartEmpty && (
+                  <Heading fontSize="xl" color="gray.400">
+                    Seu carrinho está vazio...
+                  </Heading>
+                )}
+                <Divider
+                  orientation="horizontal"
+                  borderColor="gray.400"
+                  width="100%"
+                  height="10px"
+                />
+                {!isCartEmpty && (
+                  <>
+                    <Flex align="center" justify="flex-end">
+                      <Heading fontSize="xl" color="gray.400">
+                        Total:{'  '}
+                        <Text as="b" fontSize="4xl" color="green.400">
+                          {new Intl.NumberFormat('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL',
+                          }).format(totalPrice)}
+                        </Text>
+                      </Heading>
+                    </Flex>
+                    <Divider
+                      orientation="horizontal"
+                      borderColor="gray.400"
+                      width="100%"
+                      height="10px"
+                    />
+                  </>
+                )}
               </Stack>
             </Stack>
           </ModalBody>
@@ -134,8 +191,12 @@ export function Header() {
             <Button variant="ghost" color="green.400" onClick={onClose}>
               Continuar comprando
             </Button>
-            <Button colorScheme="green" onClick={onClose}>
-              Comprar tudo
+            <Button
+              colorScheme="green"
+              onClick={onClose}
+              disabled={isCartEmpty}
+            >
+              Finalizar compra
             </Button>
           </ModalFooter>
         </ModalContent>

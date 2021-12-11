@@ -1,13 +1,15 @@
 import products from './products.json';
 
 export type Product = {
-  id: number;
+  id: string;
   title: string;
   price: number;
-  discountPrice?: number;
   inventory: number;
+  discountPrice?: number;
+  amount?: number;
   images: string[];
   badges: string[];
+  description: string;
 };
 
 export const getProducts = async (): Promise<Product[]> => {

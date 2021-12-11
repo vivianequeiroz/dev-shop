@@ -9,10 +9,13 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
+import { useCart } from '../../hooks/useCart';
+
 import { PriceTag } from './PriceTag';
 import { CartProductMeta } from './CartProductMeta';
 
 type CartItemProps = {
+  id: string;
   isGiftWrapping?: boolean;
   name: string;
   quantity: number;
@@ -42,6 +45,7 @@ const QuantitySelect = (props: SelectProps) => {
 
 export const CartItem = (props: CartItemProps) => {
   const {
+    id,
     isGiftWrapping,
     name,
     quantity,
@@ -51,6 +55,16 @@ export const CartItem = (props: CartItemProps) => {
     onChangeQuantity,
     onClickDelete,
   } = props;
+  const { updateProductAmount } = useCart();
+
+  const onChangeProductAmount = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+  ) => {
+    const newQuantity = +event.currentTarget.value;
+
+    onChangeQuantity?.(newQuantity);
+    updateProductAmount({ productId: id, amount: newQuantity });
+  };
 
   return (
     <Flex
@@ -66,12 +80,7 @@ export const CartItem = (props: CartItemProps) => {
         justify="space-between"
         display={{ base: 'none', md: 'flex' }}
       >
-        <QuantitySelect
-          value={quantity}
-          onChange={(e) => {
-            onChangeQuantity?.(+e.currentTarget.value);
-          }}
-        />
+        <QuantitySelect value={quantity} onChange={onChangeProductAmount} />
         <PriceTag price={price} currency={currency} />
         <CloseButton
           aria-label={`Delete ${name} from cart`}
@@ -87,15 +96,10 @@ export const CartItem = (props: CartItemProps) => {
         justify="space-between"
         display={{ base: 'flex', md: 'none' }}
       >
-        <Link fontSize="sm" textDecor="underline">
+        <Link fontSize="sm" textDecor="underline" onClick={onClickDelete}>
           Delete
         </Link>
-        <QuantitySelect
-          value={quantity}
-          onChange={(e) => {
-            onChangeQuantity?.(+e.currentTarget.value);
-          }}
-        />
+        <QuantitySelect value={quantity} onChange={onChangeProductAmount} />
         <PriceTag price={price} currency={currency} />
       </Flex>
     </Flex>

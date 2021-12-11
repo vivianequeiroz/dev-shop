@@ -4,6 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import {
   Badge,
   Box,
+  Button,
   Flex,
   Image,
   Stack,
@@ -15,21 +16,27 @@ import {
   Text,
 } from '@chakra-ui/react';
 
-import { Header } from '../../components/Header';
 import { getProductById, Product } from '../../services/productsServices';
 import { generateLorem } from '../../utils/generateLorem';
 import { Shell } from '../../templates/Shell';
+import { useCart } from '../../hooks/useCart';
 
 type ProductPageProps = {
   product: Product;
 };
 
 const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
+  const { addProduct } = useCart();
+
+  const addProductToCart = () => {
+    addProduct(product.id);
+  };
+
   const renderCustomThumbs = () => {
     const images = product.images;
     const thumbList = images.map((image, index) => (
       <picture key={index}>
-        <source data-srcSet={image} type="image/jpg" />
+        <source data-srcset={image} type="image/jpg" />
         <img key={image} src={image} alt={image} height="70" />
       </picture>
     ));
@@ -72,14 +79,15 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
                     src={image}
                     alt={`${product.title} ${index}`}
                     key={image}
-                    onChange={(args) => {
-                      console.log(args);
-                    }}
                   />
                 ))}
               </Carousel>
             </Box>
-            <Box bgColor="pink" width={['100%', '49%']}>
+            <Box
+              width={['100%', '49%']}
+              align={['center', 'flex-start']}
+              spacing={[2, 4]}
+            >
               <Stack spacing={[2, 4]} direction="row">
                 {product.badges.map((badge) => (
                   <Badge key={badge} variant="subtle" colorScheme="purple">
@@ -87,16 +95,39 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
                   </Badge>
                 ))}
               </Stack>
-              <Text as="h1" color="gray.500" fontSize="4xl" noOfLines={8}>
+              <Text
+                mt={2}
+                as="h1"
+                color="gray.500"
+                fontSize="4xl"
+                noOfLines={8}
+              >
                 {product.title}
               </Text>
-              <Text mt={6} as="h2" color="gray.500" fontSize="2xl">
+              <Text mt={3} as="p" color="gray.600" fontSize="xl" noOfLines={8}>
+                {product.description}
+              </Text>
+              <Text mt={6} as="h2" color="gray.500" fontSize="5xl">
                 Por:{' '}
-                <Text as="b" color="gray.600" fontWeight="bold" fontSize="2xl">
-                  {product.price}
+                <Text as="b" color="green.600" fontWeight="bold" fontSize="6xl">
+                  {new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  }).format(product.price)}
                 </Text>
               </Text>
-              <Box>...</Box>
+              <Box>
+                <Button
+                  m="1rem"
+                  marginTop={[4, 12, 20]}
+                  colorScheme="blue"
+                  width="100%"
+                  height="3rem"
+                  onClick={addProductToCart}
+                >
+                  Adicionar ao carrinho
+                </Button>
+              </Box>
             </Box>
           </Flex>
         </Box>
