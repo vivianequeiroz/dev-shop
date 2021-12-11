@@ -15,7 +15,7 @@ export const NavBar: React.FC = () => {
           as={NextLink}
           fontSize="1.3rem"
           fontWeight="bold"
-          color="blue.700"
+          color="white"
           href="/home#monitors"
         >
           Monitores
@@ -24,7 +24,7 @@ export const NavBar: React.FC = () => {
           as={NextLink}
           fontSize="1.3rem"
           fontWeight="bold"
-          color="blue.700"
+          color="white"
           href="/home#keyboards"
         >
           Teclados
@@ -33,7 +33,7 @@ export const NavBar: React.FC = () => {
           as={NextLink}
           fontSize="1.3rem"
           fontWeight="bold"
-          color="blue.700"
+          color="white"
           href="/home#mouses"
         >
           Mouses
@@ -42,7 +42,7 @@ export const NavBar: React.FC = () => {
           as={NextLink}
           fontSize="1.3rem"
           fontWeight="bold"
-          color="blue.700"
+          color="white"
           href="/home#chairs"
         >
           Cadeiras
