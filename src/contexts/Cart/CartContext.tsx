@@ -11,14 +11,14 @@ interface CartProviderProps {
 }
 
 interface UpdateProductAmount {
-  productId: number;
+  productId: string;
   amount: number;
 }
 
 export interface CartContextData {
   cart: Product[];
-  addProduct: (productId: number) => Promise<void>;
-  removeProduct: (productId: number) => void;
+  addProduct: (productId: string) => Promise<void>;
+  removeProduct: (productId: string) => void;
   updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void;
 }
 
@@ -52,7 +52,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     return storagedCart;
   });
 
-  const addProduct = async (productId: number) => {
+  const addProduct = async (productId: string) => {
     try {
       const product = products.find((product) => product.id === productId);
 
@@ -108,7 +108,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     }
   };
 
-  const removeProduct = (productId: number) => {
+  const removeProduct = (productId: string) => {
     try {
       console.log('trying to remove');
       const hasProductInCart = cart.find((product) => product.id === productId);
@@ -152,6 +152,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     productId,
     amount,
   }: UpdateProductAmount) => {
+    console.log('trying to update', productId, amount);
     try {
       if (amount <= 0) {
         return;

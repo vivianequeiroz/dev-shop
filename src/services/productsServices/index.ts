@@ -1,7 +1,7 @@
 import products from './products.json';
 
 export type Product = {
-  id: number;
+  id: string;
   title: string;
   price: number;
   discountPrice?: number;
