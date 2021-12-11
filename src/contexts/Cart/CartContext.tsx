@@ -45,6 +45,7 @@ const persistCart = (cart: Product[]) => {
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const toast = useToast();
+
   const [cart, setCart] = useState<Product[]>(() => {
     const storagedCart = recoverCart();
 
@@ -80,32 +81,36 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       } else {
         updateProductAmount({
           productId,
-          amount: cart[isProductAlreadyInCartIndex].inventory + 1,
+          amount: cart[isProductAlreadyInCartIndex].amount
+            ? Number(cart[isProductAlreadyInCartIndex].amount) + 1
+            : 1,
         });
       }
-
+      console.log(cart);
       toast({
         title: 'Sucesso',
         description: 'Produto adicionado ao carrinho',
         status: 'success',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
     } catch (error: any) {
+      console.log(`deu ruim`);
       toast({
         title: 'Erro',
         description: 'Não foi possível adicionar o produto',
         status: 'error',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
     }
   };
 
   const removeProduct = (productId: number) => {
     try {
+      console.log('trying to remove');
       const hasProductInCart = cart.find((product) => product.id === productId);
 
       if (hasProductInCart) {
@@ -127,16 +132,18 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         status: 'error',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
-    } catch {
+    } catch (error) {
+      console.log(`deu ruim`);
+      console.log(error);
       toast({
         title: 'Erro',
         description: 'Erro ao remover produto do carrinho.',
         status: 'error',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
     }
   };
@@ -150,10 +157,10 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         return;
       }
 
-      const product = products.find((product) => product.id === productId);
+      const product = cart.find((product) => product.id === productId);
 
-      if (product!.inventory < amount) {
-        throw new Error('Product out of stock');
+      if (!product) {
+        return;
       }
 
       setCart((previousCart) => {
@@ -161,20 +168,22 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
           (product) => product.id === productId,
         );
 
-        previousCart[productIndex].inventory = amount;
+        previousCart[productIndex].amount = amount;
         const newCart = [...previousCart];
 
         persistCart(newCart);
         return newCart;
       });
     } catch (error: any) {
+      console.log(`deu ruim update`);
+      console.log(error.message);
       toast({
         title: 'Erro',
         description: 'Erro ao remover produto do carrinho.',
         status: 'error',
         duration: 9000,
         isClosable: true,
-        position: 'bottom-left',
+        position: 'top-right',
       });
     }
   };

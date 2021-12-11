@@ -26,8 +26,8 @@ import { Logo } from '../Logo';
 import { User } from '../User';
 import { NavBar } from '../NavBar';
 import { CartItem } from '../CartItem';
-import { getProducts } from '../../services/productsServices';
 import products from '../../services/productsServices/products.json';
+
 export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const finalRef = useRef();

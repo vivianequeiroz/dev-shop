@@ -6,6 +6,7 @@ export type Product = {
   price: number;
   discountPrice?: number;
   inventory: number;
+  amount?: number;
   images: string[];
   badges: string[];
 };
