@@ -32,6 +32,8 @@ import { useCart } from '../../hooks/useCart';
 export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { cart } = useCart();
+  const isCartEmpty = cart.length === 0;
+
   const finalRef = useRef();
 
   const [isLoading, setLoading] = useState(false);
@@ -124,6 +126,11 @@ export function Header() {
                     price={product.price}
                   />
                 ))}
+                {isCartEmpty && (
+                  <Heading fontSize="xl" color="gray.400">
+                    Seu carrinho está vazio...
+                  </Heading>
+                )}
               </Stack>
             </Stack>
           </ModalBody>
@@ -137,7 +144,11 @@ export function Header() {
             <Button variant="ghost" color="green.400" onClick={onClose}>
               Continuar comprando
             </Button>
-            <Button colorScheme="green" onClick={onClose}>
+            <Button
+              colorScheme="green"
+              onClick={onClose}
+              disabled={isCartEmpty}
+            >
               Comprar tudo
             </Button>
           </ModalFooter>
