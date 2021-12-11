@@ -85,7 +85,7 @@ export function Header() {
       <Stack spacing={[2, 4]} direction="row" align="center">
         <User />
         <Center height="4rem" width="1rem">
-          <Divider orientation={dividerOrientation} color="black" />
+          <Divider orientation={dividerOrientation} height="60%" />
         </Center>
 
         <IconButton
@@ -98,7 +98,7 @@ export function Header() {
         {isUserAuthenticated && (
           <>
             <Center height="4rem" width="1rem">
-              <Divider orientation={dividerOrientation} color="black" />
+              <Divider orientation={dividerOrientation} height="60%" />
             </Center>
             <IconButton
               as="button"

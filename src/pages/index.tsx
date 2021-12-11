@@ -17,6 +17,8 @@ import { motion } from 'framer-motion';
 import { getSession, signIn, useSession } from 'next-auth/react';
 import { Session } from 'next-auth';
 
+import { Logo } from '../components/Logo';
+
 type LoginProps = {
   session: Session | null;
 };
@@ -128,9 +130,7 @@ const Login: NextPage<LoginProps> = () => {
             initial={titleInitialAnimation}
             animate={titleFinalAnimation}
           >
-            <Text as="h1" fontSize="5xl" color="white" fontWeight="bold">
-              DevShop
-            </Text>
+            <Logo />
           </motion.div>
           <motion.div
             initial={cartInitialAnimation}
