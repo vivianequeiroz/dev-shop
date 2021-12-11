@@ -79,9 +79,6 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
                     src={image}
                     alt={`${product.title} ${index}`}
                     key={image}
-                    onChange={(args) => {
-                      console.log(args);
-                    }}
                   />
                 ))}
               </Carousel>
