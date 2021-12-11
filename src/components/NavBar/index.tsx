@@ -10,16 +10,16 @@ export const NavBar: React.FC = () => {
         templateRows={{ base: '1fr 1fr', md: '1fr' }}
         gap={[2, 4, 8, 10]}
       >
-        <Link fontSize="1.3rem" fontWeight="bold" color="blue.700" href="#monitors">
+        <Link fontSize="1.3rem" fontWeight="bold" color="white" href="#monitors">
           Monitores
         </Link>
-        <Link fontSize="1.3rem" fontWeight="bold" color="blue.700" href="#keyboards" >
+        <Link fontSize="1.3rem" fontWeight="bold" color="white" href="#keyboards" >
           Teclados
         </Link>
-        <Link fontSize="1.3rem" fontWeight="bold" color="blue.700" href="#mouses">
+        <Link fontSize="1.3rem" fontWeight="bold" color="white" href="#mouses">
           Mouses
         </Link>
-        <Link fontSize="1.3rem" fontWeight="bold" color="blue.700" href="#chairs">
+        <Link fontSize="1.3rem" fontWeight="bold" color="white" href="#chairs">
           Cadeiras
         </Link>
       </SimpleGrid>
