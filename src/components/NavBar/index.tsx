@@ -11,42 +11,26 @@ export const NavBar: React.FC = () => {
         templateRows={{ base: '1fr 1fr', md: '1fr' }}
         gap={[2, 4, 8, 10]}
       >
-        <Link
-          as={NextLink}
-          fontSize="1.3rem"
-          fontWeight="bold"
-          color="white"
-          href="/home#monitors"
-        >
-          Monitores
-        </Link>
-        <Link
-          as={NextLink}
-          fontSize="1.3rem"
-          fontWeight="bold"
-          color="white"
-          href="/home#keyboards"
-        >
-          Teclados
-        </Link>
-        <Link
-          as={NextLink}
-          fontSize="1.3rem"
-          fontWeight="bold"
-          color="white"
-          href="/home#mouses"
-        >
-          Mouses
-        </Link>
-        <Link
-          as={NextLink}
-          fontSize="1.3rem"
-          fontWeight="bold"
-          color="white"
-          href="/home#chairs"
-        >
-          Cadeiras
-        </Link>
+        <NextLink href="/home#monitors">
+          <Link fontSize="1.3rem" fontWeight="bold" color="white">
+            Monitores
+          </Link>
+        </NextLink>
+        <NextLink href="/home#keyboards">
+          <Link fontSize="1.3rem" fontWeight="bold" color="white">
+            Teclados
+          </Link>
+        </NextLink>
+        <NextLink href="/home#mouses">
+          <Link fontSize="1.3rem" fontWeight="bold" color="white">
+            Mouses
+          </Link>
+        </NextLink>
+        <NextLink href="/home#chairs">
+          <Link fontSize="1.3rem" fontWeight="bold" color="white">
+            Cadeiras
+          </Link>
+        </NextLink>
       </SimpleGrid>
     </Flex>
   );
