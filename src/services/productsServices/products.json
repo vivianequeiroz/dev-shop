@@ -1,15 +1,167 @@
 [
   {
-    "id": "isudhfasdjkfhasdjkl",
+    "id": "1",
     "title": "Nintendo Switch 32GB, 1x Joycon, Neon - HBDSKABA1",
     "price": 2199.9,
     "inventory": 55,
     "images": [
-      "https://images.kabum.com.br/produtos/fotos/135586/nintendo-switch-32gb-1x-joycon-neon-azul-vermelho-hbdskaba2_1610110214_gg.jpg",
-      "https://images.kabum.com.br/produtos/fotos/135586/nintendo-switch-32gb-1x-joycon-neon-azul-vermelho-hbdskaba2_1610111365_gg.jpg",
-      "https://images.kabum.com.br/produtos/fotos/135586/nintendo-switch-32gb-1x-joycon-neon-azul-vermelho-hbdskaba2_1610110214_gg.jpg",
-      "https://images.kabum.com.br/produtos/fotos/135586/nintendo-switch-32gb-1x-joycon-neon-azul-vermelho-hbdskaba2_1610110214_gg.jpg"
+      "https://images.kabum.com.br/produtos/fotos/105009/teclado-mecanico-gamer-hyperx-alloy-origins-core-rgb-hx-kb7rdx-br_1574693479_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/105009/teclado-mecanico-gamer-hyperx-alloy-origins-core-rgb-hx-kb7rdx-br_teclado-mecanico-gamer-hyperx-alloy-origins-core-rgb-hx-kb7rdx-br_1574693489_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/105009/teclado-mecanico-gamer-hyperx-alloy-origins-core-rgb-hx-kb7rdx-br_teclado-mecanico-gamer-hyperx-alloy-origins-core-rgb-hx-kb7rdx-br_1574693482_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/105009/teclado-mecanico-gamer-hyperx-alloy-origins-core-rgb-hx-kb7rdx-br_teclado-mecanico-gamer-hyperx-alloy-origins-core-rgb-hx-kb7rdx-br_1574693480_gg.jpg"
     ],
-    "badges": ["console", "nintendo", "switch"]
+    "description": "O HyperX Alloy Origins Core é um teclado com menos dez teclas resistente e ultracompacto com chaves de teclas mecânicas exclusivas HyperX projetado para proporcionar aos gamers a melhor combinação de estilo, desempenho e confiabilidade.",
+    "badges": ["teclado mecanico", "compacto", "hyper x"]
+  },
+  {
+    "id": "2",
+    "title": "Teclado Mecânico Gamer Husky Gaming Blizzard, Branco, 60%, Switch Gateron Red, ABNT2, RGB - HGMO001",
+    "price": 339.29,
+    "inventory": 215,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/114587/teclado-mecanico-gamer-husky-blizzard-rgb-switch-gateron-red-abnt2-branco-tc-hbl-br_1619467058_p.jpg",
+      "https://images.kabum.com.br/produtos/fotos/114587/teclado-mecanico-gamer-husky-blizzard-rgb-switch-gateron-red-abnt2-branco-tc-hbl-br_1619467064_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/114587/teclado-mecanico-gamer-husky-blizzard-rgb-switch-gateron-red-abnt2-branco-tc-hbl-br_1619467063_gg.jpg  ",
+      "https://images.kabum.com.br/produtos/fotos/114587/teclado-mecanico-gamer-husky-blizzard-rgb-switch-gateron-red-abnt2-branco-tc-hbl-br_1619467061_gg.jpg"
+    ],
+    "description": "O Teclado Mecânico Gamer Husky Gaming Blizzard, 60%, RGB, Switch Gateron Red, ABNT2, Branco é perfeito para quem precisa de performance e precisão. Prepare-se para muitas horas de batalha intensa em seus gameplays!",
+    "badges": ["teclado mecanico", "compacto", "husky"]
+  },
+  {
+    "id": "3",
+    "title": "Teclado Mecânico Gamer Corsair K70 MK.2, RGB, Switch Cherry MX Red, ABNT2 - CH-9109010-BR",
+    "price": 1411.66,
+    "inventory": 25,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/99937/teclado-mec-nico-gamer-corsair-k70-mk-2-rgb-switch-cherry-mx-red-abnt2-ch-9109010-br_1632492316_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/99937/teclado-mec-nico-gamer-corsair-k70-mk-2-rgb-switch-cherry-mx-red-abnt2-ch-9109010-br_1632492317_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/99937/teclado-mec-nico-gamer-corsair-k70-mk-2-rgb-switch-cherry-mx-red-abnt2-ch-9109010-br_1632492316_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/99937/teclado-mec-nico-gamer-corsair-k70-mk-2-rgb-switch-cherry-mx-red-abnt2-ch-9109010-br_1632492316_gg.jpg"
+    ],
+    "description": "As teclas mecânicas CHERRY RED oferecem mais confiabilidade e precisão com atuação mecânica de 1,2 mm excepcionalmente rápida. É um teclado mecânico para jogos com estrutura em alumínio resistente, teclas 100% CHERRY MX e 8 MB de armazenamento interno de perfil.",
+    "badges": ["teclado mecanico", "corsair", "switch cherry"]
+  },
+  {
+    "id": "4",
+    "title": "Monitor Gamer LG 34' IPS, Curvo Ultra Wide, 144 Hz, Full HD, 1ms, FreeSync, HDR 10, 99% sRGB, HDMI/DisplayPort, Ajuste de Altura - 34GL750",
+    "price": 1411.66,
+    "inventory": 25,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/107267/monitor-gamer-led-lg-34-ultrawide-full-hd-ips-2-hdmi-displayport-freesync-144hz-1ms-altura-ajustavel-34gl750_monitor-gamer-led-lg-34-ultrawide-full-hd-ips-2-hdmi-displayport-freesync-144hz-1ms-altura-ajustavel-34gl750_1572618373_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/107267/monitor-gamer-led-lg-34-ultrawide-full-hd-ips-2-hdmi-displayport-freesync-144hz-1ms-altura-ajustavel-34gl750_monitor-gamer-led-lg-34-ultrawide-full-hd-ips-2-hdmi-displayport-freesync-144hz-1ms-altura-ajustavel-34gl750_1572618365_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/107267/monitor-gamer-led-lg-34-ultrawide-full-hd-ips-2-hdmi-displayport-freesync-144hz-1ms-altura-ajustavel-34gl750_monitor-gamer-led-lg-34-ultrawide-full-hd-ips-2-hdmi-displayport-freesync-144hz-1ms-altura-ajustavel-34gl750_1572618358_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/107267/monitor-gamer-led-lg-34-ultrawide-full-hd-ips-2-hdmi-displayport-freesync-144hz-1ms-altura-ajustavel-34gl750_monitor-gamer-led-lg-34-ultrawide-full-hd-ips-2-hdmi-displayport-freesync-144hz-1ms-altura-ajustavel-34gl750_1572618347_gg.jpg"
+    ],
+    "description": "Monitor Gamer LG LED 34 polegadas Evolua o jogo antes do seu rival O Monitor LG Gamer é um poderoso equipamento de exibição de jogos integrado às funções de alto desempenho que podem responder a qualquer jogo de grande sucesso.",
+    "badges": ["monitor curvo", "lg", "ultra wide"]
+  },
+  {
+    "id": "5",
+    "title": "Monitor Gamer Asus TUF 27' IPS, 280 Hz, Full HD, 1ms, G-Sync, HDR 400, 99% sRGB, HDMI/DisplayPort, Ajuste de Altura, Vesa, Som - VG279QM",
+    "price": 3555.44,
+    "inventory": 35,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/113008/monitor-gamer-asus-tuf-gaming-27-full-hd-ips-hdmi-displayport-g-sync-280hz-1ms-altura-ajustavel-vg279qm_1594664363_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/113008/monitor-gamer-asus-tuf-gaming-27-full-hd-ips-hdmi-displayport-g-sync-280hz-1ms-altura-ajustavel-vg279qm_1594664367_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/113008/monitor-gamer-asus-tuf-gaming-27-full-hd-ips-hdmi-displayport-g-sync-280hz-1ms-altura-ajustavel-vg279qm_1594664366_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/113008/monitor-gamer-asus-tuf-gaming-27-full-hd-ips-hdmi-displayport-g-sync-280hz-1ms-altura-ajustavel-vg279qm_1594664364_gg.jpg"
+    ],
+    "description": "A surpreendente taxa de atualização de 280Hz com overclock significa que a tela é quase duas vezes mais rápida que os monitores convencionais de 144 Hz. Você experimentará visuais de jogos incrivelmente fluidos, dando-lhe vantagem em jogos de tiro em primeira pessoa, corridas, estratégia em tempo real e esportes.",
+    "badges": ["monitor", "asus", "full hd"]
+  },
+  {
+    "id": "6",
+    "title": "Monitor Gamer Samsung Odyssey 23.5' LED, Curvo, 144 Hz, Full HD, FreeSync, HDMI/DisplayPort - LC24RG50FQLMZD",
+    "price": 2222.11,
+    "inventory": 25,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/112348/monitor-gamer-samsung-23-5-curvo-full-hd-hdmi-displayport-freesync-144hz-inclinacao-ajustavel-lc24rg50fqlmzd_1628016947_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/112348/monitor-gamer-samsung-23-5-curvo-full-hd-hdmi-displayport-freesync-144hz-inclinacao-ajustavel-lc24rg50fqlmzd_1628016950_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/112348/monitor-gamer-samsung-23-5-curvo-full-hd-hdmi-displayport-freesync-144hz-inclinacao-ajustavel-lc24rg50fqlmzd_1628016949_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/112348/monitor-gamer-samsung-23-5-curvo-full-hd-hdmi-displayport-freesync-144hz-inclinacao-ajustavel-lc24rg50fqlmzd_1628016948_gg.jpg"
+    ],
+    "description": "Liderança em monitores curvos. A Samsung lidera o mercado de monitores curvos por ser a primeira a apresentar os displays inovadores ao mundo em 2015. Com tecnologia líder do setor em uma linha completa, os monitores curvos da Samsung são consistentemente o número um em participação de mercado.",
+    "badges": ["monitor", "samsung", "curvo"]
+  },
+  {
+    "id": "7",
+    "title": "Mouse Gamer Redragon Cobra, Chroma RGB, 10000DPI, 7 Botões, Preto - M711",
+    "price": 176.25,
+    "inventory": 954,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/94555/94555_1516707116_index_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/94555/94555_4_1516707060_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/94555/94555_2_1516707060_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/94555/94555_1516707060_gg.jpg"
+    ],
+    "description": "O Mouse Gamer Redragon Cobra possui um desing Impressionante RGB Trazendo a já amada iluminação Redragon Chroma Mark II o mouse Gamer Profissional Cobra impressiona com tanta beleza, conforto e precisão.",
+    "badges": ["mouse", "redragon", "rgb"]
+  },
+  {
+    "id": "8",
+    "title": "Mouse Gamer Logitech G403 HERO com RGB LIGHTSYNC, 6 Botões Programáveis, Ajuste de Peso e Sensor HERO 25K - 910-005631",
+    "price": 299.99,
+    "inventory": 470,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/102649/mouse-gamer-logitech-g403-hero-16k-rgb-lightsync-16000-dpi_mouse-gamer-logitech-g403-hero-16k-rgb-lightsync-16000-dpi_1563479684_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/102649/mouse-gamer-logitech-g403-hero-16k-rgb-lightsync-16000-dpi_mouse-gamer-logitech-g403-hero-16k-rgb-lightsync-16000-dpi_1563479671_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/102649/mouse-gamer-logitech-g403-hero-16k-rgb-lightsync-16000-dpi_mouse-gamer-logitech-g403-hero-16k-rgb-lightsync-16000-dpi_1563479662_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/102649/mouse-gamer-logitech-g403-hero-16k-rgb-lightsync-16000-dpi_mouse-gamer-logitech-g403-hero-16k-rgb-lightsync-16000-dpi_1563479659_gg.jpg"
+    ],
+    "description": "O G403 entra no ringue com a nova geração do sensor HERO 25K. Prepare-se para um mouse com rastreamento 1:1 no próximo nível, suavização, filtragem ou aceleração zero.",
+    "badges": ["mouse", "logitech", "rgb"]
+  },
+  {
+    "id": "9",
+    "title": "Mouse sem fio Logitech M510 com Conexão USB Unifying e Pilha Inclusa - 910-001822",
+    "price": 169.99,
+    "inventory": 61,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/71413/mouse-logitech-m510-sem-fio-tecnologia-unifying-preto-1000dpi-910-001822_1614171488_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/71413/mouse-logitech-m510-sem-fio-tecnologia-unifying-preto-1000dpi-910-001822_1614171490_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/71413/mouse-logitech-m510-sem-fio-tecnologia-unifying-preto-1000dpi-910-001822_1614171489_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/71413/71413_6_1519735659_gg.jpg"
+    ],
+    "description": "Mouse sem fio Logitech M510 O mouse sem fio Logitech M510 de tamanho padrão oferece mais controle, para que você possa fazer mais com o mouse. A formato curvado com laterais de borracha macia oferecem o suporte necessário para o conforto o diário. ",
+    "badges": ["mouse", "logitech", "usb"]
+  },
+  {
+    "id": "10",
+    "title": "Cadeira Gamer Husky Gaming Blizzard 900, Preto, Com Almofadas, Reclinável com Sistema Frog, Descanso de Braço 3D - HGMA062",
+    "price": 2699.99,
+    "inventory": 32,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/147782/cadeira-gamer-husky-blizzard-all-black-900_1627330178_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/147782/cadeira-gamer-husky-blizzard-all-black-900_1627330179_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/147782/cadeira-gamer-husky-blizzard-all-black-900_1627330177_gg.jpg"
+    ],
+    "description": "Desfrute de um novo patamar em elegância com a Cadeira Gamer Husky Gaming Blizzard All Black 900! Suporte adequado para o seu corpo com espuma integrada e o couro em PVC, permitindo que você se mantenha numa posição confortável por muito mais tempo.",
+    "badges": ["cadeira", "husky", "reclinavel"]
+  },
+  {
+    "id": "11",
+    "title": "Cadeira Gamer Alpha Gamer Nimbus Black Red - AGNIMBUSBKRED",
+    "price": 1569.99,
+    "inventory": 981,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/114394/cadeira-gamer-alpha-gamer-nimbus-black-red-agnimbusbkred_1595270736_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/114394/cadeira-gamer-alpha-gamer-nimbus-black-red-agnimbusbkred_1595270735_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/114394/cadeira-gamer-alpha-gamer-nimbus-black-red-agnimbusbkred_1595270734_gg.jpg"
+    ],
+    "description": "As cadeiras gaming Alpha Gamer Nimbus incluem duas almofadas: para apoio lombar e também para apoio da cabeça. A ergonomia é um dos nossos principais focos de atenção; E como tal, desenvolvemos apoios de braço facilmente ajustáveis, para um ótimo encaixe com a estrutura corporal de qualquer pessoa.",
+    "badges": ["cadeira", "alpha", "gamer"]
+  },
+  {
+    "id": "12",
+    "title": "Cadeira Gamer Husky Gaming Snow, Preto, Cilindro de Gás Classe 4, Base em Metal, Roda em Nylon - HSN-BK",
+    "price": 899.99,
+    "inventory": 615,
+    "images": [
+      "https://images.kabum.com.br/produtos/fotos/92748/cadeira-gamer-husky-snow-black-hsn-bk_1548093996_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/92748/cadeira-gamer-husky-snow-black-hsn-bk_1608206907_gg.jpg",
+      "https://images.kabum.com.br/produtos/fotos/92748/cadeira-gamer-husky-snow-black-hsn-bk__1548093997_gg.jpg"
+    ],
+    "description": "A Cadeira Gamer Husky Gaming Snow proporciona alto conforto e qualidade para as melhores horas do seu dia! Tudo isso aliado a um ótimo custo benefício. ",
+    "badges": ["cadeira", "husky", "gamer"]
   }
 ]

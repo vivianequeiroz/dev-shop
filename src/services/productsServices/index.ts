@@ -9,6 +9,7 @@ export type Product = {
   amount?: number;
   images: string[];
   badges: string[];
+  description: string;
 };
 
 export const getProducts = async (): Promise<Product[]> => {
